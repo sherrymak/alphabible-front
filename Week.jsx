@@ -23,7 +23,7 @@ export default function Week() {
       })
       .then(data => {
         if (data.success) {
-          setWeek(data.Week);
+          setWeek(data.week);
         } else {
           setError("Week not found");
         }
