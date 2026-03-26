@@ -7,21 +7,21 @@ export const getWeekByNumber = async (weekNumber) => {
 
 export const getChapterById = async (bookOrder, chapterNumber) => {
   const res = await fetch(
-    `${BASE_URL}/chapters/${bookOrder}/${chapterNumber}`
+    `${BASE_URL}/biblechapters/${bookOrder}/${chapterNumber}`
   );
   return res.json();
 };
 
 export const getNextChapter = async (bookOrder, chapterNumber) => {
   const res = await fetch(
-    `${BASE_URL}/chapters/${bookOrder}/${chapterNumber}/next`
+    `${BASE_URL}/biblechapters/${bookOrder}/${chapterNumber}/next`
   );
   return res.json();
 };
 
 export const getPreviousChapter = async (bookOrder, chapterNumber) => {
   const res = await fetch(
-    `${BASE_URL}/chapters/${bookOrder}/${chapterNumber}/previous`
+    `${BASE_URL}/biblechapters/${bookOrder}/${chapterNumber}/previous`
   );
   return res.json();
 };

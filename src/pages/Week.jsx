@@ -13,7 +13,7 @@ export default function Week() {
     setLoading(true);
     setError("");
 
-    fetch(`${API_URL}/weeks/${weekNumber}`)
+    fetch(`${API_URL}/api/weeks/${weekNumber}`)
       .then(async res => {
         if (!res.ok) {
           const text = await res.text();
@@ -23,7 +23,7 @@ export default function Week() {
       })
       .then(data => {
         if (data.success) {
-          setWeek(data.data);
+          setWeek(data.week);
         } else {
           setError("Week not found");
         }

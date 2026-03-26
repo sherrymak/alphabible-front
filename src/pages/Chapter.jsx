@@ -15,7 +15,7 @@ export default function Chapter() {
     setLoading(true);
     setError("");
 
-    fetch(`${API_URL}/biblechapters/${bookOrder}/${chapterNumber}`)
+    fetch(`${API_URL}/api/biblechapters/${bookOrder}/${chapterNumber}`)
       .then(async res => {
         if (!res.ok) {
           const text = await res.text();
@@ -25,7 +25,7 @@ export default function Chapter() {
       })
       .then(data => {
         if (data.success) {
-          setChapter(data.data);
+          setChapter(data.chapter);
         } else {
           setError("Chapter not found");
         }
